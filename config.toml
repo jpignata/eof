@@ -1,0 +1,4 @@
+baseURL = "https://eof.sh/"
+languageCode = "en-us"
+title = "eof"
+disableKinds = ["categories", "tags"]

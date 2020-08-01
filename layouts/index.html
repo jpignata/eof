@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+	<title>EOF &mdash; a weekly tech digest</title>
+    <link rel='stylesheet' href='/styles.css'>
+    <base target='_blank'>
+</head>
+
+<body>
+    {{ $paginator := .Paginate (where .Site.Pages "Type" "issue") }}
+
+    <div class="container">
+        <div class="body">
+            <header>
+                <h1>EOF</h1>
+                <em>a weekly tech digest, every monday</em>
+            </header>
+        
+            <main>
+                {{ range $paginator.Pages }}
+                    <h2>{{ dateFormat "2 January 2006" .Date }}</h2>
+                    issue #{{ .Params.Number }}: {{ .Params.Capsule }}
+                    
+                    {{ .Content }}
+                {{ end }}
+            </main>    
+        </div>
+    </div>
+</body>
+</html>
