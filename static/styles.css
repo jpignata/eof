@@ -1,4 +1,4 @@
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
     .body {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -12,6 +12,7 @@
 
     header {
         order: 2;
+        width: 300px;
     }
 }
 
@@ -41,7 +42,7 @@
 
 main {
     font-family: 'Roboto';
-    margin: 1em 0.25em;
+    margin: 0 0.25em;
 }
 
 ::selection {
@@ -49,9 +50,14 @@ main {
 }
 
 header {
-    font-family: 'Roboto';
-    text-align: left;
     margin-bottom: 2em;
+}
+
+header p {
+    margin: 0 0 0 5px;
+    font-family: 'Roboto';
+    font-size: 1em;
+    font-style: italic;
 }
 
 h1 {
