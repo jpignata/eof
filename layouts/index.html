@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset='utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1'>
 	<title>EOF &mdash; a weekly tech digest</title>
+
+    <meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+    <meta name='twitter:card' content='summary'>
+    <meta name='twitter:creator' content='@jpignata'>
+    <meta name='twitter:title' content='EOF'>
+    <meta name='twitter:description' content='a weekly tech digest'>
+
     <link rel='stylesheet' href='/styles.css'>
-    <base target='_blank'>
 </head>
 
 <body>
@@ -18,12 +23,25 @@
         </header>
 
         <main>
-            {{ range $paginator.Pages }}
-                <h2>{{ dateFormat "2 January 2006" .Date }}</h2>
-                No. {{ .Params.Number }} &mdash; {{ .Params.Capsule }}
+            <article>
+                {{ range first 1 $paginator.Pages }}
+                    <h2>{{ dateFormat "2 January 2006" .Date }}</h2>
+                    No. {{ .Params.Number }} &mdash; {{ .Params.Capsule }}
 
-                {{ .Content }}
-            {{ end }}
+                    {{ .Content }}
+                {{ end }}
+            </article>
+
+            <nav>
+                <h3>previously</h3>
+                <ul>
+                    {{ range $paginator.Pages }}
+                    <li>
+                        {{ dateFormat "02 Jan" .Date }} / <a href="{{ .Permalink }}">{{ .Params.Capsule }}</a>
+                    </li>
+                    {{ end }}
+                </ul> 
+            </nav>
         </main>
     </div>
 </body>
