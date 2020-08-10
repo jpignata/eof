@@ -3,14 +3,14 @@
 <head>
 	<title>EOF &mdash; a weekly tech digest</title>
 
-    <meta charset='utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1'>
-    <meta name='twitter:card' content='summary'>
-    <meta name='twitter:creator' content='@jpignata'>
-    <meta name='twitter:title' content='EOF'>
-    <meta name='twitter:description' content='a weekly tech digest'>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@jpignata">
+    <meta name="twitter:title" content="EOF">
+    <meta name="twitter:description" content="a weekly tech digest">
 
-    <link rel='stylesheet' href='/styles.css'>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
@@ -18,15 +18,15 @@
 
     <div class="body">
         <header>
-            <h1>EOF</h1>
-            <p>a weekly tech digest, every monday</p>
+            <h1><a href="/">EOF</a></h1>
+            <p class="sub">a weekly tech digest, every monday</p>
         </header>
 
         <main>
             <article>
                 {{ range first 1 $paginator.Pages }}
                     <h2>{{ dateFormat "2 January 2006" .Date }}</h2>
-                    No. {{ .Params.Number }} &mdash; {{ .Params.Capsule }}
+                    No. {{ .Params.Number }} &mdash; <a class="title" href="{{ .Permalink }}">{{ .Params.Capsule }}</a>
 
                     {{ .Content }}
                 {{ end }}
@@ -35,7 +35,7 @@
             <nav>
                 <h3>previously</h3>
                 <ul>
-                    {{ range $paginator.Pages }}
+                    {{ range after 1 $paginator.Pages }}
                     <li>
                         {{ dateFormat "02 Jan" .Date }} / <a href="{{ .Permalink }}">{{ .Params.Capsule }}</a>
                     </li>

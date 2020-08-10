@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>EOF &mdash; a weekly tech digest</title>
+	<title>{{ .Params.Capsule }} / EOF</title>
 
-    <meta charset='utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1'>
-    <meta name='twitter:card' content='summary'>
-    <meta name='twitter:creator' content='@jpignata'>
-    <meta name='twitter:title' content='No. {{ .Params.Number }}'>
-    <meta name='twitter:description' content='{{ .Params.Capsule }}'>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@jpignata">
+    <meta name="twitter:title" content="No. {{ .Params.Number }} &mdash; {{ .Params.Capsule }}">
+    <meta name="twitter:description" content="{{ dateFormat "2 January 2006" .Date }}">
 
-    <link rel='stylesheet' href='/styles.css'>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
     <div class="body">
         <header>
-            <h1>EOF</h1>
-            <p>a weekly tech digest, every monday</p>
+            <h1><a href="/">EOF</a></h1>
+            <p class="sub">a weekly tech digest, every monday</p>
         </header>
 
         <main>
             <article>
                 <h2>{{ dateFormat "2 January 2006" .Date }}</h2>
-                No. {{ .Params.Number }} &mdash; {{ .Params.Capsule }}
+                No. {{ .Params.Number }} &mdash; <a class="title" href="{{ .Permalink }}">{{ .Params.Capsule }}</a>
 
                 {{ .Content }}
             </article>
 
             <nav>
-                <h3>previously</h3>
+                <h3>issues</h3>
                 <ul>
                     {{ range where .Site.Pages "Type" "issue" }}
                     <li>
