@@ -1,4 +1,5 @@
 baseURL = "https://eof.sh/"
 languageCode = "en-us"
 title = "eof"
-disableKinds = ["categories", "tags"]
+disableKinds = ["categories", "tags", "taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
