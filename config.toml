@@ -1,5 +1,8 @@
 baseURL = "https://eof.sh/"
-languageCode = "en-us"
-title = "eof"
 disableKinds = ["categories", "tags", "taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
+languageCode = "en-us"
+title = "eof"
+
+[markup.goldmark.renderer]
+unsafe = true
