@@ -9,7 +9,6 @@ a {
 }
 
 img {
-  border: 1px solid #000718;
   width: 100%;
 }
 
@@ -17,10 +16,6 @@ img {
     body, h1 a, a.title {
         background: #001427;
         color: #F1FAEE;
-    }
-
-    img {
-      border: 1px solid #FFF8E7;
     }
 
     a {
@@ -79,7 +74,7 @@ nav > h3::before {
     margin: 0;
 }
 
-li {
+ul li {
     list-style-type: none;
     line-height: 1.7em;
 }
@@ -87,6 +82,10 @@ li {
 ul {
     margin: 1em 0 0 0;
     padding: 0;
+}
+
+hr {
+  display: none;
 }
 
 h1 {
@@ -123,7 +122,7 @@ h3::before {
     margin-right: 5px;
 }
 
-li > p:first-child::before {
+ul li > p:first-child::before {
     content: '#';
     color: #A2A7A5;
     margin-right: 5px;
@@ -142,6 +141,25 @@ h1 a {
   padding: 0;
 }
 
+ol {
+  padding-left: 1.5em;
+}
+
+section.footnotes {
+  font-size: 0.9em;
+}
+
+pre {
+	overflow-x: scroll;
+  font-size: 0.8em;
+  line-height: 1.3em; 
+  padding: 10px;
+}
+
+.capsule {
+  margin-top: 0px;
+}
+
 @font-face {
     font-family: 'Play';
     font-style: normal;
@@ -150,6 +168,7 @@ h1 a {
         url('../fonts/play-v11-latin-700.woff2') format('woff2'),
         url('../fonts/play-v11-latin-700.woff') format('woff');
 }
+
 
 @font-face {
     font-family: 'Roboto';

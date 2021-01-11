@@ -4,7 +4,7 @@
 	<title>{{ .Params.Capsule }} / EOF</title>
 
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="{{ .Params.Capsule }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@jpignata">
@@ -23,10 +23,21 @@
         <main>
             <article>
                 <h2>{{ dateFormat "2 January 2006" .Date }}</h2>
-                No. {{ .Params.Number }} &mdash; <a class="title" href="{{ .Permalink }}">{{ .Params.Capsule }}</a>
+                <p class="capsule">No. {{ .Params.Number }} &mdash; <a class="title" href="{{ .Permalink }}">{{ .Params.Capsule }}</a></p>
 
                 {{ .Content }}
             </article>
+
+             <nav>
+                 <h3>previously</h3>
+                 <ul>
+                     {{ range where .Site.Pages "Type" "issue" }}
+                     <li>
+                         {{ dateFormat "02 Jan" .Date }} / <a href="{{ .Permalink }}">{{ .Params.Capsule }}</a>
+                     </li>
+                     {{ end }}
+                 </ul>
+             </nav>
         </main>
     </div>
 </body>
