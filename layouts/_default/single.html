@@ -4,12 +4,13 @@
 	<title>{{ .Params.Capsule }} / EOF</title>
 
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="{{ .Params.Capsule }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@jpignata">
     <meta name="twitter:title" content="No. {{ .Params.Number }} &mdash; {{ .Params.Capsule }}">
     <meta name="twitter:description" content="{{ dateFormat "2 January 2006" .Date }}">
+    <base target="_blank">
 
     <link rel="stylesheet" href="/styles.css">
 </head>
